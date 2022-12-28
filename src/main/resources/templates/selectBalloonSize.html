@@ -1,0 +1,50 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+<section class="jumbotron text-center myclass">
+  <div class="container">
+    <h1 class="jumbotron-heading">Balloon Order page - Select Balloon Size !</h1>
+  </div>
+</section>
+
+<div class="container">
+  <section class="select">
+    <form th:action="@{/selectBalloon}" th:method="POST" class="form-check">
+      <h2>Choose balloon size:</h2>
+      <div>
+        <input type="radio" name="balloonSize" value="Small" class="form-group"/> Small
+      </div>
+      <div>
+        <input type="radio" name="balloonSize" value="Medium" class="form-group"/> Medium
+      </div>
+      <div>
+        <input type="radio" name="balloonSize" value="Big" class="form-group"/> Big <br/>
+      </div>
+      <div>
+        <input type="radio" name="balloonSize" value="Extra Big" class="form-group"/> Extra Big <br/>
+      </div>
+      <br/>
+      <button type="submit" class="btn btn-outline-success">Submit</button>
+    </form>
+  </section>
+  <aside>
+    <table class="table table-bordered">
+      <thead class="thead-light">
+      <tr>
+        <th colspan="2">
+          Your Order Status
+        </th>
+      </tr>
+      </thead>
+      <tr>
+        <td><b>Balloon Type </b></td>
+        <td th:text="${session.option}">
+        </td>
+      </tr>
+    </table>
+  </aside>
+</div>
+
+</body>
+</html>

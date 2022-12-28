@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Orders</title>
+</head>
+<body>
+<h2>User orders</h2>
+
+    <table class="table table-striped">
+        <tr th:each="order : ${orders}" class="product">
+            <td th:text="${session.username}"> </td>
+            <td th:text="${order.getBalloonSize()}"> </td>
+            <td th:text="${order.getBalloonColor()}"> </td>
+            <td th:text="${session.date}"></td>
+        </tr>
+    </table>
+
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>Balloon Order page - Welcome and choose a Balloon</title>
+    <style type="text/css">
+        body {
+            width: 800px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Welcome to our Balloon Shop App</h1>
+</header>
+<main>
+    <form th:method="POST" th:action="@{/}">
+    <h2>Choose balloon color:</h2>
+    <input type="radio"  th:value="${balloons[0].name}" name="color"> <th:block th:text="${balloons[0].name}"></th:block> <br/>
+    <input type="radio"  th:value="${balloons[1].name}" name="color"> <th:block th:text="${balloons[1].name}"></th:block> <br/>
+    <input type="radio"  th:value="${balloons[2].name}" name="color"> <th:block th:text="${balloons[2].name}"></th:block> <br/>
+    <input type="radio"  th:value="${balloons[3].name}" name="color"> <th:block th:text="${balloons[3].name}"></th:block> <br/>
+    <input type="radio"  th:value="${balloons[4].name}" name="color"> <th:block th:text="${balloons[4].name}"></th:block> <br/>
+
+
+    <br/>
+<!--    <a href="/selectBalloon">Submit</a>-->
+        <input type="submit" value="Submit">
+        <input type="submit" value="Add new balloon">
+    </form>
+</main>
+</body>
+</html>
